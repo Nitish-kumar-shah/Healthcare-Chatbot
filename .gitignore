@@ -1,0 +1,32 @@
+# --- System & Environment ---
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+
+# --- Frontend Dependencies ---
+client/node_modules/
+client/dist/
+client/.env
+
+# --- HUGE Raw Data (Block these!) ---
+# This blocks the 100MB+ JSON file that crashes GitHub
+server/HealthCareMagic-100k.json
+ml_model/HealthCareMagic-100k.json
+
+# --- Old/Trash Files ---
+ml_model/chat_data.csv
+ml_model/clean_chat_data.csv
+ml_model/OLD_UNUSED_FILES/
+
+# --- ALLOW THESE (Critical for App to work) ---
+# We explicitly tell Git "Do NOT ignore these" because we need them on Render
+!server/doctor_knowledge_base.csv
+!server/symptom_Description.csv
+!server/symptom_precaution.csv
+!server/symptom_severity.csv
+
+# --- Allow Models ---
+!server/*.keras
+!server/*.pkl
