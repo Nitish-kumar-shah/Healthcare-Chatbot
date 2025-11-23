@@ -30,9 +30,9 @@ if 'instruction' in df.columns:
 
 df = df.rename(columns=rename_map)
 
-# Take top 25,000 rows (Since you are using 25k)
+
 print("🧹 Cleaning data...")
-df_small = df.head(25000)[['Question', 'Answer']]
+df_small = df.head(15000)[['Question', 'Answer']]
 df_small['Question'] = df_small['Question'].fillna("").astype(str).str.lower()
 df_small['Answer'] = df_small['Answer'].fillna("").astype(str)
 
