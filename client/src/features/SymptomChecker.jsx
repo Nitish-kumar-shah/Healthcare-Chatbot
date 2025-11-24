@@ -96,11 +96,14 @@ const SymptomChecker = () => {
     setLoading(true);
     const symptomList = symptoms.split(",").map((s) => s.trim());
     try {
-      const response = await fetch("http://127.0.0.1:8000/predict", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ symptoms: symptomList }),
-      });
+      const response = await fetch(
+        "https://healthcare-chatbot-qd7o.onrender.com/predict",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ symptoms: symptomList }),
+        }
+      );
       const data = await response.json();
       setPrediction(data);
     } catch (error) {
