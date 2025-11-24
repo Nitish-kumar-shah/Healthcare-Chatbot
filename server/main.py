@@ -713,7 +713,7 @@ def chat_with_bot(request: ChatRequest):
         tag = chat_lbl_encoder.inverse_transform([tag_index])[0]
         confidence = float(np.max(result))
         
-        if confidence > 0.8: 
+        if confidence > 0.55: 
             response_text = random.choice(chat_responses[tag])
             return {"response": response_text}
 

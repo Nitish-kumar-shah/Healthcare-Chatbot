@@ -438,14 +438,11 @@ const ChatInterface = ({ userName, customAvatar }) => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "http://127.0.0.1:8000/chathttps://healthcare-chatbot-qd7o.onrender.com/chat",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: userText }),
-        }
-      );
+      const response = await fetch("http://127.0.0.1:8000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userText }),
+      });
       const data = await response.json();
       setMessages((prev) => [...prev, { sender: "bot", text: data.response }]);
       saveMessageToDB("bot", data.response);
