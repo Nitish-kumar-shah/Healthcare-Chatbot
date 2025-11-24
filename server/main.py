@@ -609,6 +609,10 @@ try:
     chat_lbl_encoder = joblib.load('chat_label_encoder.pkl')
     chat_responses = joblib.load('chat_responses.pkl')
     print("✅ Social Neural Network Loaded")
+    
+    # Force clear memory before loading the CSV
+    import gc
+    gc.collect()
 
     # --- C. Medical Knowledge Base (TF-IDF) ---
     # This loads your 50k rows!

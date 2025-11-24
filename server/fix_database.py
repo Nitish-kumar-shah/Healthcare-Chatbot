@@ -32,7 +32,7 @@ df = df.rename(columns=rename_map)
 
 
 print("🧹 Cleaning data...")
-df_small = df.head(15000)[['Question', 'Answer']]
+df_small = df.head(5000)[['Question', 'Answer']]
 df_small['Question'] = df_small['Question'].fillna("").astype(str).str.lower()
 df_small['Answer'] = df_small['Answer'].fillna("").astype(str)
 
